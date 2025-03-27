@@ -1,0 +1,330 @@
+[
+  {
+    "text": "How do I apply for admission?",
+    "intent": "faq_admissions",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9957003593444824
+    }
+  },
+  {
+    "text": "What is the admission process?",
+    "intent": "faq_admissions",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.5265979766845703
+    }
+  },
+  {
+    "text": "How can I get admitted?",
+    "intent": "faq_admissions",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9621446132659912
+    }
+  },
+  {
+    "text": "Admission procedure details",
+    "intent": "faq_admissions",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.615003228187561
+    }
+  },
+  {
+    "text": "What documents are required for admission?",
+    "intent": "faq_admissions",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.45613008737564087
+    }
+  },
+  {
+    "text": "Is there an entrance exam for admission?",
+    "intent": "faq_admissions",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8091680407524109
+    }
+  },
+  {
+    "text": "Can international students apply?",
+    "intent": "faq_admissions",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.38806426525115967
+    }
+  },
+  {
+    "text": "What courses do you offer?",
+    "intent": "faq_courses",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9976014494895935
+    }
+  },
+  {
+    "text": "List the available programs",
+    "intent": "faq_courses",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.7317992448806763
+    }
+  },
+  {
+    "text": "What are the specializations in B.Tech?",
+    "intent": "faq_courses",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.7462312579154968
+    }
+  },
+  {
+    "text": "Tell me about postgraduate programs",
+    "intent": "faq_courses",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.606593906879425
+    }
+  },
+  {
+    "text": "Do you offer online courses?",
+    "intent": "faq_courses",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9936303496360779
+    }
+  },
+  {
+    "text": "What are the eligibility criteria for courses?",
+    "intent": "faq_courses",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.9543108344078064
+    }
+  },
+  {
+    "text": "Can I switch courses after admission?",
+    "intent": "faq_courses",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.712909996509552
+    }
+  },
+  {
+    "text": "What is the fee structure?",
+    "intent": "faq_fees",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.9929395914077759
+    }
+  },
+  {
+    "text": "How much does the tuition cost?",
+    "intent": "faq_fees",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.3382876515388489
+    }
+  },
+  {
+    "text": "Are there any additional fees?",
+    "intent": "faq_fees",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.657841145992279
+    }
+  },
+  {
+    "text": "What are the hostel charges?",
+    "intent": "faq_fees",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.4285411834716797
+    }
+  },
+  {
+    "text": "Can I pay fees in installments?",
+    "intent": "faq_fees",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.793571412563324
+    }
+  },
+  {
+    "text": "What is the refund policy for fees?",
+    "intent": "faq_fees",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.8092453479766846
+    }
+  },
+  {
+    "text": "Does the university offer scholarships?",
+    "intent": "faq_scholarships",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.40124058723449707
+    }
+  },
+  {
+    "text": "What are the eligibility criteria for scholarships?",
+    "intent": "faq_scholarships",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.6665685176849365
+    }
+  },
+  {
+    "text": "How can I apply for a scholarship?",
+    "intent": "faq_scholarships",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.9171141982078552
+    }
+  },
+  {
+    "text": "Are there scholarships for international students?",
+    "intent": "faq_scholarships",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.8977921605110168
+    }
+  },
+  {
+    "text": "What is the scholarship amount?",
+    "intent": "faq_scholarships",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.574733316898346
+    }
+  },
+  {
+    "text": "What are the placement opportunities?",
+    "intent": "faq_placements",
+    "intent_prediction": {
+      "name": "bot_challenge",
+      "confidence": 0.494962215423584
+    }
+  },
+  {
+    "text": "Which companies visit the campus for placements?",
+    "intent": "faq_placements",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5444445610046387
+    }
+  },
+  {
+    "text": "What is the highest placement package?",
+    "intent": "faq_placements",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.31263217329978943
+    }
+  },
+  {
+    "text": "What is the average placement package?",
+    "intent": "faq_placements",
+    "intent_prediction": {
+      "name": "mood_great",
+      "confidence": 0.5843584537506104
+    }
+  },
+  {
+    "text": "Do you offer internship opportunities?",
+    "intent": "faq_placements",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.2980513572692871
+    }
+  },
+  {
+    "text": "What is the placement percentage of students?",
+    "intent": "faq_placements",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.37811288237571716
+    }
+  },
+  {
+    "text": "What is the contact number of the university?",
+    "intent": "faq_contact",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.5454630255699158
+    }
+  },
+  {
+    "text": "How can I reach the admission office?",
+    "intent": "faq_contact",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.47214820981025696
+    }
+  },
+  {
+    "text": "Provide the email ID of the university",
+    "intent": "faq_contact",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.45493221282958984
+    }
+  },
+  {
+    "text": "Where is the university located?",
+    "intent": "faq_contact",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.7651379704475403
+    }
+  },
+  {
+    "text": "What are the office hours for contact?",
+    "intent": "faq_contact",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.8952133059501648
+    }
+  },
+  {
+    "text": "What information does the college website provide?",
+    "intent": "faq_website_info",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.53391432762146
+    }
+  },
+  {
+    "text": "How do I navigate the website?",
+    "intent": "faq_website_info",
+    "intent_prediction": {
+      "name": "deny",
+      "confidence": 0.44263359904289246
+    }
+  },
+  {
+    "text": "What can I find on the university website?",
+    "intent": "faq_website_info",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.6720656156539917
+    }
+  },
+  {
+    "text": "Where can I download the prospectus?",
+    "intent": "faq_website_info",
+    "intent_prediction": {
+      "name": "greet",
+      "confidence": 0.44375333189964294
+    }
+  },
+  {
+    "text": "How do I check my application status on the website?",
+    "intent": "faq_website_info",
+    "intent_prediction": {
+      "name": "mood_unhappy",
+      "confidence": 0.8961167335510254
+    }
+  }
+]

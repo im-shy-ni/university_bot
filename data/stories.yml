@@ -1,0 +1,155 @@
+version: "3.1"
+
+#  Greetings and FAQ Queries
+stories:
+
+- story: Clear chat with action
+  steps:
+    - intent: clear
+    - action: action_clear_chat  # Keep this
+
+
+#  Story: User greets and asks about admissions
+- story: User greets and asks about admissions
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: faq_admissions
+    - action: utter_faq_admissions
+
+# Story: User asks about the university
+- story: User asks about the university
+  steps:
+    - intent: faq_about
+    - action: utter_faq_about
+
+# Story: User asks about home section
+- story: User asks about home section
+  steps:
+    - intent: faq_home
+    - action: utter_faq_home
+
+# Story: User greets and asks about courses
+- story: User greets and asks about courses
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: faq_courses
+    - action: utter_faq_courses
+
+# Story: User greets and asks about fees
+- story: User greets and asks about fees
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: faq_fees
+    - action: utter_faq_fees
+
+# Story: User greets and asks about scholarships
+- story: User greets and asks about scholarships
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: faq_scholarships
+    - action: utter_faq_scholarships
+
+# Story: User greets and asks about placements
+- story: User greets and asks about placements
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: faq_placements
+    - action: utter_faq_placements
+
+# Story: User greets and asks for contact details
+- story: User greets and asks for contact details
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: faq_contact
+    - action: utter_faq_contact
+
+# Story: User greets and asks about website information
+- story: User greets and asks about website information
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: faq_website_info
+    - action: utter_faq_website_info
+
+#  Section-Specific Multi-Step Stories
+# Story: User asks about academics
+- story: User asks about academics
+  steps:
+    - intent: faq_academics
+    - action: utter_faq_academics
+
+#  Story: User asks about departments
+- story: User asks about departments
+  steps:
+    - intent: faq_departments
+    - action: utter_faq_departments
+
+#  Story: User asks about facilities
+- story: User asks about facilities
+  steps:
+    - intent: faq_facilities
+    - action: utter_faq_facilities
+
+#  Multiple Queries in One Session
+- story: User asks multiple questions in one session
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: faq_home
+    - action: utter_faq_home
+    - intent: faq_about
+    - action: utter_faq_about
+    - intent: faq_academics
+    - action: utter_faq_academics
+    - intent: faq_admissions
+    - action: utter_faq_admissions
+    - intent: faq_departments
+    - action: utter_faq_departments
+    - intent: faq_fees
+    - action: utter_faq_fees
+    - intent: faq_scholarships
+    - action: utter_faq_scholarships
+    - intent: faq_placements
+    - action: utter_faq_placements
+    - intent: faq_facilities
+    - action: utter_faq_facilities
+    - intent: faq_contact
+    - action: utter_faq_contact
+    - intent: faq_website_info
+    - action: utter_faq_website_info
+
+#  Fallback and Error Handling
+#  Story: Fallback scenario
+- story: Fallback scenario
+  steps:
+    - intent: nlu_fallback
+    - action: utter_default_fallback
+    - action: action_listen
+
+#  Story: Custom Fallback
+- story: Custom Fallback
+  steps:
+    - intent: action_custom_fallback
+    - action: utter_default_fallback
+    - action: action_listen
+
+#  Story: Out of scope response
+- story: Out of scope response
+  steps:
+    - intent: out_of_scope
+    - action: utter_out_of_scope
+
+
+
+- story: College services query
+  steps:
+    - user: |
+        What services does the college offer?
+      intent: faq_college_services
+    - action: utter_faq_college_services

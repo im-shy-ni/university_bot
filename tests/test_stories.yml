@@ -1,0 +1,241 @@
+#### This file contains tests to evaluate that your bot behaves as expected.
+#### For more details, see: https://rasa.com/docs/rasa/testing-your-assistant
+
+stories:
+# -----------------------------------------------------
+# ✅ Basic Interaction Tests
+# -----------------------------------------------------
+- story: greet and farewell
+  steps:
+    - user: |
+        hello
+      intent: greet
+    - action: utter_greet
+    - user: |
+        bye
+      intent: goodbye
+    - action: utter_goodbye
+
+- story: bot identity challenge
+  steps:
+    - user: |
+        are you a bot?
+      intent: bot_challenge
+    - action: utter_iamabot
+
+# -----------------------------------------------------
+# ✅ University Website Queries Testing
+# -----------------------------------------------------
+- story: user asks about admissions
+  steps:
+    - user: |
+        How do I apply for admission?
+      intent: faq_admissions
+    - action: utter_faq_admissions
+
+- story: user asks about courses
+  steps:
+    - user: |
+        What courses do you offer?
+      intent: faq_courses
+    - action: utter_faq_courses
+
+- story: user asks about fees
+  steps:
+    - user: |
+        What is the fee structure?
+      intent: faq_fees
+    - action: utter_faq_fees
+
+- story: user asks about scholarships
+  steps:
+    - user: |
+        Are there any scholarships available?
+      intent: faq_scholarships
+    - action: utter_faq_scholarships
+
+- story: user asks about placements
+  steps:
+    - user: |
+        What are the placement opportunities?
+      intent: faq_placements
+    - action: utter_faq_placements
+
+- story: user asks for contact details
+  steps:
+    - user: |
+        How can I contact the university?
+      intent: faq_contact
+    - action: utter_faq_contact
+
+- story: user asks about website information
+  steps:
+    - user: |
+        What can I find on the university website?
+      intent: faq_website_info
+    - action: utter_faq_website_info
+
+# -----------------------------------------------------
+# ✅ Expanded Section Queries Testing
+# -----------------------------------------------------
+- story: user asks about home section
+  steps:
+    - user: |
+        Tell me about the home section
+      intent: faq_home
+    - action: utter_faq_home
+
+- story: user asks about about section
+  steps:
+    - user: |
+        What is the about section about?
+      intent: faq_about
+    - action: utter_faq_about
+
+- story: user asks about academics section
+  steps:
+    - user: |
+        Tell me about the academics section
+      intent: faq_academics
+    - action: utter_faq_academics
+
+- story: user asks about departments
+  steps:
+    - user: |
+        List the departments available
+      intent: faq_departments
+    - action: utter_faq_departments
+
+- story: user asks about facilities
+  steps:
+    - user: |
+        What facilities are available on campus?
+      intent: faq_facilities
+    - action: utter_faq_facilities
+
+# -----------------------------------------------------
+# ✅ Multi-step session with multiple queries
+# -----------------------------------------------------
+- story: user asks multiple queries in one session
+  steps:
+    - user: |
+        hello
+      intent: greet
+    - action: utter_greet
+    - user: |
+        Tell me about admissions
+      intent: faq_admissions
+    - action: utter_faq_admissions
+    - user: |
+        What courses are available?
+      intent: faq_courses
+    - action: utter_faq_courses
+    - user: |
+        What are the fees?
+      intent: faq_fees
+    - action: utter_faq_fees
+    - user: |
+        Do you offer scholarships?
+      intent: faq_scholarships
+    - action: utter_faq_scholarships
+    - user: |
+        Tell me about the placements
+      intent: faq_placements
+    - action: utter_faq_placements
+    - user: |
+        How do I contact you?
+      intent: faq_contact
+    - action: utter_faq_contact
+    - user: |
+        What information is on the website?
+      intent: faq_website_info
+    - action: utter_faq_website_info
+
+# -----------------------------------------------------
+# ✅ Complex Fallback Handling
+# -----------------------------------------------------
+- story: unknown query with fallback
+  steps:
+    - user: |
+        What is the weather like today?
+      intent: fallback
+    - action: utter_default_fallback
+
+# -----------------------------------------------------
+# ✅ Contradictory Query Handling
+# -----------------------------------------------------
+- story: contradictory queries
+  steps:
+    - user: |
+        What courses do you offer?
+      intent: faq_courses
+    - action: utter_faq_courses
+    - user: |
+        How do I contact you?
+      intent: faq_contact
+    - action: utter_faq_contact
+    - user: |
+        What courses do you offer?
+      intent: faq_courses
+    - action: utter_faq_courses
+
+# -----------------------------------------------------
+# ✅ Mixed Multi-step Interaction
+# -----------------------------------------------------
+- story: mixed queries
+  steps:
+    - user: |
+        hello
+      intent: greet
+    - action: utter_greet
+    - user: |
+        What courses are available?
+      intent: faq_courses
+    - action: utter_faq_courses
+    - user: |
+        How much are the fees?
+      intent: faq_fees
+    - action: utter_faq_fees
+    - user: |
+        Do you offer scholarships?
+      intent: faq_scholarships
+    - action: utter_faq_scholarships
+    - user: |
+        Where is the campus located?
+      intent: faq_contact
+    - action: utter_faq_contact
+
+# -----------------------------------------------------
+# ✅ Clear and Continue Conversation
+# -----------------------------------------------------
+- story: user clears the conversation
+  steps:
+    - user: |
+        clear the chat
+      intent: clear
+    - action: action_clear_chat
+
+- story: user continues conversation
+  steps:
+    - user: |
+        continue
+      intent: continue
+    - action: action_continue_chat
+
+# -----------------------------------------------------
+# ✅ Complex Fallback with Mixed Queries
+# -----------------------------------------------------
+- story: multi-step fallback
+  steps:
+    - user: |
+        What is the weather like today?
+      intent: fallback
+    - action: utter_default_fallback
+    - user: |
+        Do you offer online courses?
+      intent: fallback
+    - action: utter_default_fallback
+    - user: |
+        What courses are available?
+      intent: faq_courses
+    - action: utter_faq_courses

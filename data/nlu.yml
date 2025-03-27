@@ -1,0 +1,193 @@
+version: "3.1"
+
+nlu:
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+    - have a nice day
+
+# Clear and Continue Intents
+- intent: clear
+  examples: |
+    - clear
+    - reset chat
+    - erase conversation
+    - start over
+    - clear the chat
+
+- intent: continue
+  examples: |
+    - continue
+    - keep chatting
+    - don't clear
+    - no, continue
+
+# Bot Challenge Intents
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - am I talking to a bot?
+    - are you a real person?
+    - who created you?
+    - are you human?
+
+#  FAQ Intents for Bharathiar University
+- intent: faq_home
+  examples: |
+    - What is Bharathiar University about?
+    - Tell me about Bharathiar University
+    - What makes Bharathiar University special?
+    - What is the university’s mission and vision?
+    - What is unique about the university?
+
+- intent: faq_about
+  examples: |
+    - When was Bharathiar University founded?
+    - Who is Bharathiar University named after?
+    - What is the history of the university?
+    - Where is Bharathiar University located?
+    - Can you tell me about the university's objectives?
+    - What is the university's goal?
+
+- intent: faq_admissions
+  examples: |
+    - How do I apply for admission?
+    - What is the admission process?
+    - How can I get admitted?
+    - Admission procedure details
+    - What documents are required for admission?
+    - Is there an entrance exam for admission?
+    - Can international students apply?
+    - What is the admission criteria?
+
+- intent: faq_departments
+  examples: |
+    - What departments are available at Bharathiar University?
+    - List the university departments
+    - Do you have a computer science department?
+    - What departments offer research programs?
+    - Tell me about the management studies department
+    - What courses are available in the biotechnology department?
+
+- intent: faq_academics
+  examples: |
+    - What academic programs are offered?
+    - Tell me about the academic courses
+    - What courses are there in science?
+    - List the available streams
+
+- intent: faq_fees
+  examples: |
+    - What is the fee structure?
+    - How much does the tuition cost?
+    - Are there any additional fees?
+    - What are the hostel charges?
+    - Can I pay fees in installments?
+    - What is the refund policy for fees?
+    - What are the fees for MBA programs?
+    - How much is the fee for PhD programs?
+
+- intent: faq_scholarships
+  examples: |
+    - Does the university offer scholarships?
+    - What are the eligibility criteria for scholarships?
+    - How can I apply for a scholarship?
+    - Are there scholarships for international students?
+    - What is the scholarship amount?
+    - Do you offer financial aid?
+    - What is the selection process for scholarships?
+
+- intent: faq_placements
+  examples: |
+    - What are the placement opportunities?
+    - Which companies visit the campus for placements?
+    - What is the highest placement package?
+    - What is the average placement package?
+    - Do you offer internship opportunities?
+    - What is the placement percentage of students?
+    - What are the top recruiters?
+
+- intent: faq_contact
+  examples: |
+    - What is the contact number of the university?
+    - How can I reach the admission office?
+    - Provide the email ID of the university
+    - Where is the university located?
+    - What are the office hours for contact?
+    - How do I contact the placement cell?
+    - What is the contact information for the finance department?
+
+- intent: faq_facilities
+  examples: |
+    - What facilities does the university offer?
+    - Do you have hostel facilities?
+    - What are the campus amenities?
+    - Do you have a library?
+    - Are there research labs at the university?
+    - What sports facilities are available?
+
+- intent: faq_website_info
+  examples: |
+    - What information does the college website provide?
+    - How do I navigate the website?
+    - What can I find on the university website?
+    - Where can I download the prospectus?
+    - How do I check my application status on the website?
+    - Can I access online courses through the website?
+    - Where can I find the fee details on the website?
+    - What is the URL of the official website?
+    - Website link for Bharathiar University?
+
+- intent: faq_courses
+  examples: |
+    - What courses do you offer?
+    - Tell me about the available programs.
+    - List the courses.
+    - What undergraduate courses are available?
+    - Do you offer postgraduate programs?
+
+#  Fallback Intents
+- intent: fallback
+  examples: |
+    - I don't understand.
+    - What do you mean?
+    - Sorry, I didn't get that?
+    - Can you clarify?
+    - I am not sure I follow.
+
+- intent: action_custom_fallback
+  examples: |
+    - I didn't get that.
+    - I'm not sure what you mean.
+    - Please clarify.
+
+- intent: clear_button
+  examples: |
+    - clear chat
+    - wipe messages
+    - clean conversation
+
+- intent: out_of_scope
+  examples: |
+    - What is the weather like?
+    - Tell me a joke
+    - Who won the last football match?
+    - What's the capital of France?
+    - How to make pasta?
+
+- intent: faq_college_services
+  examples: |
+    - What services does the college offer?
+    - Tell me about the services available
+    - List the facilities and services on campus
