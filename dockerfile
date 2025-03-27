@@ -1,26 +1,22 @@
-# ✅ Use Python 3.10 base image
-FROM python:3.10-slim
+# Use a compatible Python base image
+FROM python:3.9-slim
 
-# ✅ Set environment variables
-ENV PYTHONUNBUFFERED=1
-ENV VIRTUAL_ENV=/opt/venv
-
-# ✅ Install dependencies
-RUN python -m venv $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-
-# ✅ Install Rasa 3.6.0
-RUN pip install --upgrade pip
-RUN pip install rasa==3.6.0
-
-# ✅ Set the working directory
+# Set working directory
 WORKDIR /app
 
-# ✅ Copy the project files
-COPY . /app
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    python3-dev \
+    python3-pip \
+    python3-venv \
+    && rm -rf /var/lib/apt/lists/*
 
-# ✅ Expose the port
-EXPOSE 5005
+# Create and activate virtual environment
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
-# ✅ Run Rasa with the correct Python version
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--port", "5005"]
+# Install Rasa with compatible Python version
+COPY requirements.txt .
+RUN pip install --upgrade pip
+RUN pip install -r requirements.txt
