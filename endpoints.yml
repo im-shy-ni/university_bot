@@ -1,0 +1,68 @@
+#  This file contains the different endpoints your bot can use.
+
+# -----------------------------------------------------
+#  Server where the models are pulled from.
+# -----------------------------------------------------
+# https://rasa.com/docs/rasa/model-storage#fetching-models-from-a-server
+
+# Uncomment the following lines if you want to fetch the model from a server
+# models:
+#   url: "http://my-server.com/models/default_core@latest"
+#   wait_time_between_pulls: 10   # [optional] (default: 100)
+
+# -----------------------------------------------------
+#  Custom action server
+# -----------------------------------------------------
+# Ensure your action server is running at this endpoint.
+# Run with: `rasa run actions`
+action_endpoint:
+  url: "http://localhost:5055/webhook"    # Endpoint for custom actions
+
+# -----------------------------------------------------
+#  Tracker store configuration (Optional)
+# -----------------------------------------------------
+# By default, conversations are stored in memory.
+# Uncomment Redis or MongoDB if you want to persist conversation data.
+
+#  Redis for storing conversations
+# tracker_store:
+#   type: redis
+#   url: localhost                 # Redis server address
+#   port: 6379                     # Redis default port
+#   db: 0                          # Redis database index
+#   password: ""                   # Redis password (if set)
+#   use_ssl: false                  # Use SSL connection if needed
+
+# MongoDB for storing conversations
+# tracker_store:
+#   type: mongod
+#   url: "mongodb://localhost:27017"    # MongoDB server URL
+#   db: "rasa"                           # Database name
+#   username: "<your-mongo-username>"   # MongoDB username
+#   password: "<your-mongo-password>"   # MongoDB password
+
+# -----------------------------------------------------
+#  Event broker (Optional)
+# -----------------------------------------------------
+# For streaming conversation events (e.g., Kafka, RabbitMQ)
+
+# RabbitMQ configuration
+# event_broker:
+#   type: "pika"                   # RabbitMQ type
+#   url: "localhost"               # RabbitMQ server address
+#   username: "username"           # RabbitMQ username
+#   password: "password"           # RabbitMQ password
+#   queue: "queue"                  # RabbitMQ queue
+
+# Kafka configuration (if using Kafka)
+# event_broker:
+#   type: "kafka"
+#   url: "localhost:9092"           # Kafka server address
+#   topic: "rasa_events"           # Kafka topic
+
+# -----------------------------------------------------
+#  Rasa model server configuration
+# -----------------------------------------------------
+# Use this if you want to run Rasa on a separate model server
+rasa:
+  url: "http://localhost:5005/api"    # Rasa server endpoint

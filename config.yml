@@ -1,0 +1,55 @@
+recipe: default.v1
+
+# The assistant project unique identifier
+assistant_id: 20250322-091947-convex-hostel
+
+#  Configuration for Rasa NLU
+# https://rasa.com/docs/rasa/nlu/components/
+language: en
+
+pipeline:
+  - name: WhitespaceTokenizer                # Tokenizes text based on whitespace
+  - name: RegexFeaturizer                    # Extracts patterns using regex
+  - name: LexicalSyntacticFeaturizer         # Adds syntactic and lexical features
+  - name: CountVectorsFeaturizer             # Converts text to vector representations
+  - name: CountVectorsFeaturizer             # Character-level n-grams
+    analyzer: char_wb
+    min_ngram: 1
+    max_ngram: 4
+
+  - name: DIETClassifier                     # Deep learning-based intent classification and entity extraction
+    epochs: 200
+    constrain_similarities: true
+    random_seed: 42
+    entity_recognition: true
+    use_masked_language_model: true
+
+  - name: EntitySynonymMapper                # Maps similar entities to the same value
+
+  - name: ResponseSelector                   # Selects appropriate responses for FAQs
+    epochs: 150
+    retrieval_intent: faq
+    constrain_similarities: true
+
+  - name: FallbackClassifier                 # Handles low-confidence predictions
+    threshold: 0.3
+    ambiguity_threshold: 0.1
+
+#  Configuration for Rasa Core
+policies:
+  - name: MemoizationPolicy                  # Memorizes previous actions
+    max_history: 5
+
+  - name: UnexpecTEDIntentPolicy             # Detects unexpected intents
+    max_history: 5
+    epochs: 150
+
+  - name: TEDPolicy                          # Dialogue policy with transformer-based embeddings
+    max_history: 10
+    epochs: 150
+    constrain_similarities: true
+
+  - name: RulePolicy                         # Handles fallback and rule-based actions
+    core_fallback_action_name: "action_default_fallback"
+    core_fallback_threshold: 0.3
+    enable_fallback_prediction: true

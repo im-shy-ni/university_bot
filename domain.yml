@@ -1,0 +1,177 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - faq_home
+  - faq_about
+  - faq_academics
+  - faq_departments
+  - faq_facilities
+  - faq_admissions
+  - faq_courses
+  - faq_fees
+  - faq_scholarships
+  - faq_placements
+  - faq_contact
+  - faq_website_info
+  - clear
+  - clear_button
+  - continue
+  - fallback
+  - out_of_scope
+  - nlu_fallback
+  - action_custom_fallback
+  - faq_college_services
+
+actions:
+  - action_clear
+  - action_clear_chat                #  Custom action to clear chat
+  - action_continue_chat 
+  - action_custom_fallback           #  Custom fallback action
+  - action_scrape_entire_website     #  Scraping entire website
+
+responses:
+
+  # Clear Button with confirmation
+  utter_clear_button:
+    - text: "Do you want to clear the chat?"
+      buttons:
+        - title: "✅ Yes, clear it"
+          payload: "/clear"
+        - title: "❌ No, continue"
+          payload: "/continue"
+
+  #  Greeting Responses
+  utter_greet:
+    - text: "Hello! 👋 How can I assist you today?"
+    - text: "Hi there! 😊 What information are you looking for?"
+    - text: "Welcome! 👩‍🎓 Feel free to ask me about admissions, courses, fees, or anything else."
+
+  #  Goodbye Responses
+  utter_goodbye:
+    - text: "Goodbye! 👋 Have a great day ahead!"
+    - text: "See you soon! ✨ Feel free to reach out anytime."
+    - text: "Bye! 😊 Stay safe and take care."
+
+  #  Bot Challenge Responses
+  utter_iamabot:
+    - text: "Yes, I am a bot 🤖, here to assist you with university-related queries."
+    - text: "I'm an AI-powered bot 🤖 designed to help you with university information."
+
+  #  FAQ Responses
+  utter_faq_home:
+    - text: "🏠 **Home Section:** Here, you can find general information, campus details, and quick access links."
+
+  utter_faq_about:
+    - text: |
+        📖 **About the University:**  
+        - Established in 1982, Bharathiar University is a leading educational institution.  
+        - It offers **UG, PG, and Ph.D. programs** in various disciplines.  
+        - The university promotes **research, innovation, and academic excellence**.  
+        - Visit the [About Section](http://bustudentbot.infinityfreeapp.com) for more info.
+
+  utter_faq_academics:
+    - text: |
+        🎓 **Academics Information:**  
+        - Courses in **Engineering, Science, Arts, and Management**.  
+        - Includes **lab facilities, workshops, and industry collaborations**.  
+        - Visit the [Academics Section](http://bustudentbot.infinityfreeapp.com) for more details.
+
+  utter_faq_departments:
+    - text: |
+        🏫 **Departments:**  
+        - **Engineering:** CSE, ECE, IT, Mechanical, Civil.  
+        - **Science:** Physics, Chemistry, Mathematics, Botany.  
+        - **Arts & Commerce:** Literature, History, Economics, Commerce.  
+        - Visit the [Departments Section](http://bustudentbot.infinityfreeapp.com) for more info.
+
+  utter_faq_facilities:
+    - text: |
+        🏢 **Campus Facilities:**  
+        - **Library:** Extensive collection of books and journals.  
+        - **Laboratories:** Modern labs with cutting-edge technology.  
+        - **Hostels:** Separate for boys and girls with amenities.  
+        - **Sports:** Indoor and outdoor sports facilities.
+
+  utter_faq_admissions:
+    - text: |
+        📝 **Admissions Process:**  
+        - Apply online through the [Bharathiar University Admissions Portal](http://bustudentbot.infinityfree.com).  
+        - Required documents: ID proof, academic transcripts, and entrance exam scores.  
+        - Admissions helpline: +91-9876543210 or email: admissions@bharathiaruniversity.edu
+
+  utter_faq_courses:
+    - text: |
+        📚 **Courses Offered:**  
+        - **Undergraduate:** B.Sc, B.Com, BBA, BCA, B.Tech  
+        - **Postgraduate:** M.Sc, MBA, MCA, M.Tech  
+        - **Ph.D. Programs:** Available in multiple disciplines.  
+        - Visit the [Courses Section](http://bustudentbot.infinityfree.com) for detailed info.
+
+  utter_faq_fees:
+    - text: |
+        💰 **Fee Structure:**  
+        - **B.Sc/B.Com/BBA:** ₹10,000 – ₹15,000 per year  
+        - **M.Sc/MBA:** ₹12,000 – ₹16,000 per year  
+        - **Ph.D.:** ₹50,000 per year  
+        - **Hostel fees:** ₹26,000 per year (including food and accommodation).  
+        - Fees can be paid in **installments**.
+
+  utter_faq_scholarships:
+    - text: |
+        🎓 **Scholarships Available:**  
+        - **Merit-based Scholarships:** For students with 90% and above marks.  
+        - **Need-based Scholarships:** For students from economically weaker sections.  
+        - **International Student Scholarships:** Up to 30% tuition fee waiver.  
+        - Apply through the [Scholarships Portal](http://bustudentbot.infinityfree.com).
+
+  utter_faq_placements:
+    - text: |
+        💼 **Placement Information:**  
+        - **Top Recruiters:** TCS, Infosys, Wipro, Amazon, Cognizant.  
+        - **Highest Package:** ₹12 LPA.  
+        - **Average Package:** ₹6 LPA.  
+        - **Placement Rate:** 90%.  
+        - Internship opportunities are available for final-year students.
+
+  utter_faq_contact:
+    - text: |
+        ☎️ **Contact Details:**  
+        - **Phone:** +91-9876543210  
+        - **Email:** info@bharathiaruniversity.edu  
+        - **Address:** Bharathiar University, Coimbatore, Tamil Nadu, India.  
+        - **Office Hours:** Monday to Friday, 9 AM – 5 PM.
+
+  utter_faq_website_info:
+    - text: |
+        🌐 **Website Information:**  
+        - The website contains details about **admissions, courses, fees, placements, and contact details**.  
+        - You can **download the prospectus** and check your **application status**.  
+        - Visit: [Bharathiar University Website](http://bustudentbot.infinityfree.com).
+
+  #  Fallback Responses
+  utter_default_fallback:
+    - text: "I'm sorry, I didn't understand that. 🤔 Could you please rephrase your question?"
+    - text: "Hmm, I'm not sure what you mean. 🧐 Try asking differently!"
+    - text: "I didn't catch that. 😕 Can you provide more details or rephrase?"
+
+  utter_out_of_scope:
+    - text: "I'm here to assist with college-related queries. Could you ask something about the university?"
+    - text: "I'm designed to answer college-related questions. Please ask me about admissions, courses, or facilities."
+    - text: "I specialize in university queries. Let me know if you have questions about academics or admissions."
+
+
+  utter_faq_college_services:
+    - text: |
+         **College Services:**  
+        - **Library Services**: Access to books, journals, and digital resources.  
+        - **Counseling and Guidance**: Academic and personal counseling.  
+        - **Health Services**: On-campus health center.  
+        - **Career Services**: Placement assistance and career counseling.  
+        - **Student Clubs and Societies**: Various co-curricular and extracurricular activities.
+
+session_config:
+  session_expiration_time: 60   # Session timeout after 60 minutes
+  carry_over_slots_to_new_session: true
